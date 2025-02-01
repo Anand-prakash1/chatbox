@@ -1,0 +1,123 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+    height: 100vh;
+}
+
+.chat-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    background: #007bff;
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    max-width: 70%;
+    padding: 8px 12px;
+    border-radius: 7px;
+    animation: fadeIn 0.3s ease-in;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.message.received {
+    background: #e9ecef;
+    align-self: flex-start;
+}
+
+.message.sent {
+    background: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+
+.message-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.sender-name {
+    font-weight: 600;
+    font-size: 0.85em;
+    color: #666;
+}
+
+.timestamp {
+    font-size: 0.7em;
+    opacity: 0.8;
+    align-self: flex-end;
+}
+
+.message.received .timestamp {
+    color: #666;
+}
+
+.message.sent .timestamp {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.input-container {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #e0e0e0;
+}
+
+#message-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+#send-button {
+    padding: 12px 25px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#send-button:hover {
+    background: #0056b3;
+}
+
+#online-users {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
